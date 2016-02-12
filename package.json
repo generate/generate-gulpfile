@@ -1,0 +1,34 @@
+{
+  "name": "generate-gulpfile",
+  "description": "Generate a gulpfile for your project.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/generate-gulpfile",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/generate-gulpfile",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/generate-gulpfile/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "generator.js",
+    "templates"
+  ],
+  "main": "generator.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "engine-base": "^0.1.2",
+    "mixin-deep": "^1.1.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-istanbul": "^0.10.2",
+    "gulp-mocha": "^2.1.3"
+  },
+  "keywords": []
+}
