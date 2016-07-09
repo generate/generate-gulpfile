@@ -1,23 +1,26 @@
 'use strict';
 
-var fs = require('fs');
 var path = require('path');
-var dir = require('memoize-path')(__dirname);
-var utils = require('./utils');
+var dir = path.resolve.bind(path, __dirname);
+var utils = require('./lib/utils');
 
 module.exports = function(app, base, env) {
-  // if (utils.isRegistered(app, 'gulpfile')) return;
-  // var cwd = dir('templates');
+  if (utils.isValid(app, 'generate-gulpfile')) return;
+  var templates = path.resolve.bind(path, dir('templates'));
+  var dest = app.options.dest || app.cwd;
 
-  // app.use(readPath());
-  // app.use(keys());
+  app.use(utils.keys());
 
-  // app.create('gulpfiles', { renameKey: renameKey('stem') });
-  // app.create('gulptasks', { renameKey: renameKey('stem'), viewType: 'partial' });
+  app.create('gulpfiles', { renameKey: utils.renameKey(dest, 'stem') });
+  app.create('gulptasks', { renameKey: utils.renameKey(dest, 'stem'), viewType: 'partial' });
 
-  // app.gulptasks(templates('tasks/*.js')());
-  // app.gulpfiles(templates('files/*.js')());
+  app.task('default', function(cb) {
+    app.gulptasks(templates('tasks/*.js'));
+    app.gulpfiles(templates('files/*.js'));
 
-  // console.log(app.gulpfiles.keys);
+
+    console.log(app.gulpfiles.keys);
+    cb();
+  });
 };
 

@@ -1,5 +1,5 @@
-<% if (coverage === true) { %> 
-  <%= gulptask("mocha-coverage") %> 
+<% if (typeof coverage !== 'undefined' && coverage === true) { %> 
+  <%= gulptask('mocha-coverage') %> 
 <% } else { %> 
-  <%= gulptask("mocha-basic") %> 
+  <%= gulptask('mocha-basic') %> 
 <% } %>

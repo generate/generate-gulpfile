@@ -1,6 +1,6 @@
 {
   "name": "generate-gulpfile",
-  "description": "Generate a gulpfile for your project.",
+  "description": "Generate a gulpfile.js from the command line if Generate is installed globally, or use this as a plugin or sub-generator in your own generator to make it a continuous part of the build workflow when scaffolding out a new project.",
   "version": "0.1.0",
   "homepage": "https://github.com/generate/generate-gulpfile",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
@@ -25,24 +25,78 @@
   },
   "dependencies": {
     "arr-flatten": "^1.0.1",
-    "debug": "^2.2.0",
     "extend-shallow": "^2.0.1",
+    "is-valid-app": "^0.1.2",
     "isobject": "^2.1.0",
     "lazy-cache": "^2.0.0",
     "matched": "^0.4.1",
-    "memoize-path": "^0.1.2",
     "micromatch": "^2.3.8",
+    "mixin-deep": "^1.1.3",
     "union-value": "^0.2.3"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-eslint": "^1.0.0",
+    "gulp-format-md": "^0.1.9",
     "gulp-istanbul": "^0.10.2",
     "gulp-mocha": "^2.1.3",
     "mocha": "^2.4.5"
   },
   "keywords": [
+    "app",
+    "boilerplate",
+    "build",
+    "cli",
+    "cli-app",
+    "command-line",
+    "create",
+    "dev",
+    "development",
+    "framework",
+    "front",
+    "frontend",
     "generate",
-    "gulpfile"
-  ]
+    "generateplugin",
+    "generator",
+    "gulpfile",
+    "init",
+    "initialize",
+    "new",
+    "plugin",
+    "project",
+    "projects",
+    "scaffold",
+    "scaffolder",
+    "scaffolding",
+    "template",
+    "templates",
+    "tool",
+    "web",
+    "webapp",
+    "yeoman",
+    "yo"
+  ],
+  "lintDeps": {
+    "ignore": [
+      "templates"
+    ]
+  },
+  "verb": {
+    "toc": false,
+    "layout": "generator",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "reflinks": [
+      "generate",
+      "verb-readme-generator",
+      "verb"
+    ]
+  }
 }
