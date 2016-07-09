@@ -21,39 +21,40 @@ gulpfile.addPlugin('unused', function(config) {
 
 gulpfile.addPlugin('eslint', ['eslint()', 'eslint.format()']);
 gulpfile.addPlugin('istanbul', 'istanbul.writeReports()');
+module.exports = gulpfile;
 
-var res = gulpfile.createTasks([
-  {
-    taskname: 'default',
-    plugins: ['istanbul', 'mocha', 'dest'],
-    dependencies: ['bar', 'baz'],
-    src: ['*.js'],
-    dest: './dist',
-    devDependencies: ['gulp-mocha', 'gulp-istanbul']
-  },
-  {
-    taskname: 'coverage',
-    plugins: ['dest'],
-    src: ['test/*.js', 'test.js', 'index.js', 'lib/*.js', 'test.js'],
-    dest: './dist',
-    devDependencies: ['gulp-istanbul']
-  },
-  {
-    taskname: 'test',
-    plugins: ['dest'],
-    src: ['*.js'],
-    dest: './dist',
-    devDependencies: ['gulp-mocha']
-  },
-  {
-    taskname: 'lint',
-    plugins: ['eslint'],
-    src: ['*.js'],
-    dest: './dist',
-    devDependencies: ['gulp-eslint']
-  }
-]);
-console.log(res);
+// var res = gulpfile.createTasks([
+//   {
+//     taskname: 'default',
+//     plugins: ['istanbul', 'mocha', 'dest'],
+//     dependencies: ['bar', 'baz'],
+//     src: ['*.js'],
+//     dest: './dist',
+//     devDependencies: ['gulp-mocha', 'gulp-istanbul']
+//   },
+//   {
+//     taskname: 'coverage',
+//     plugins: ['dest'],
+//     src: ['test/*.js', 'test.js', 'index.js', 'lib/*.js', 'test.js'],
+//     dest: './dist',
+//     devDependencies: ['gulp-istanbul']
+//   },
+//   {
+//     taskname: 'test',
+//     plugins: ['dest'],
+//     src: ['*.js'],
+//     dest: './dist',
+//     devDependencies: ['gulp-mocha']
+//   },
+//   {
+//     taskname: 'lint',
+//     plugins: ['eslint'],
+//     src: ['*.js'],
+//     dest: './dist',
+//     devDependencies: ['gulp-eslint']
+//   }
+// ]);
+// console.log(res);
 
 // var lint = gulpfile.createTask('lint', {
 //   plugins: ['eslint'],
@@ -63,6 +64,7 @@ console.log(res);
 // });
 // console.log(lint);
 
-var files = new Files();
-var res = files.toPatterns();
-console.log(res);
+// var files = new Files();
+// var res = files.toPatterns();
+// console.log(res);
+
